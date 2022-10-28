@@ -1,28 +1,176 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('html/_head.htm',{
-	"title":"Главная"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-                <div class="page__cover">
-                    <img src = "@img/frank-mckenna-aGz5hkren64-unsplash.jpg" alt="">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <div class="page__cover">
+                <img src="@img/frank-mckenna-aGz5hkren64-unsplash.jpg" alt="">
+                <div class="page__container">
+                    <section class="page__main-info main-info">
+                        <h1 class="main-info__title">
+                            Курсы кройки и шитья <span>для начинающих и профи</span>
+                        </h1>
+                        <h3 class="main-info__subtitle">
+                            Попробуйте бесплатно первое занятие
+                        </h3>
+                        <form action="#" data-popup-message="#popup_accept" data-dev data-validate method="POST"
+                            class="main-info__form main-info-form">
+                            <div class="main-info-form__lines">
+                                <div class="main-info-form__name-line">
+                                    <input class="main-info-form__name" data-required="" data-error="Введите имя"
+                                        type="text" placeholder="Ваше имя" name="name">
+                                </div>
+                                <div class="main-info-form__telephone-line">
+                                    <input class="main-info-form__telephone" data-required=""
+                                        data-error="Введите номер телефона" autocomplete="off" type="tel"
+                                        placeholder="Ваш телефон" name="tel">
+                                </div>
+                            </div>
+                            <div class="main-info-form__real-checkbox checkbox_block">
+                                <input type="checkbox" class="real" data-required=""
+                                    data-error="Необходимо подтверждение" id="real">
+                                <label for="real">Да, я реальный человек</label>
+                            </div>
+                            <div class="accept">
+                                <input type="submit" class="form-button button"><span></span></input>
+                            </div>
+                        </form>
+                    </section>
                 </div>
-                <div hidden class="dws">
-                    <div class="pulse"><a href="tel: +79319686618">
-                      <div class="bloc"></div>
-                      <div class="phone ">
-                        <img src = "@img/call-calling.svg" alt="">
-                      </div>
-                      <div class="text">Кнопка звонка</div>
-                    </div></a>
-                  </div>
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_popup.htm',{})
-		@@include('html/_js.htm',{})
-	</body>
+            </div>
+            <section class="page__advantages advantages">
+                <div class="advantages__container">
+                    <div class="advantages__block">
+                        <h2 class="advantages__title title">Что такое курс <br>
+                            «Кроя и Шитья для начинающих?»</h2>
+                        <div class="advantages__benefit">
+                            <ul class="advantages__list">
+                                <li class="advantages__li">Вы научитесь шить с нуля и освоите все основные навыки
+                                    моделирования и конструирования одежды</li>
+                                <li class="advantages__li">В программе собраны лучшие методики</li>
+                                <li class="advantages__li">Живое общение с наставником на каждом этапе обучения и
+                                    проверка домашнего задания</li>
+                                <li class="advantages__li">Возможность проходить обучение в любой точке Мира</li>
+                                <li class="advantages__li">Учитесь в удобное для вас время! График обучения определяете
+                                    вы сами!</li>
+                                <li class="advantages__li">3 месяца интенсивной практики шитья</li>
+                                <li class="advantages__li">Создайте коллекцию одежды за 3 месяца!</li>
+                            </ul>
+                            <div class="advantages__image">
+                                <img src="@img/941163-middle-PhotoRoom.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="page__courses courses">
+                <div class="courses__container">
+                    <div class="courses__block">
+                        <h2 class="courses__title title">Наши курсы</h2>
+                        <div class="courses__cards">
+                            <div class="courses__card card">
+                                <div class="card__img">
+                                    <img src = "@img/kroika.jpg" alt="">
+                                </div>
+                                <div class="card__text">
+                                    <div class="card__title">Кройка шитьё для начинающих </div>
+                                    <div class="card__description">Создано для новичков! Если вы мечтали научиться
+                                        кройке и шитью с нуля, то этот курс для вас! Обучение по системе от простого к
+                                        сложному позволит создать ваши первые изделия и влюбиться в шитье. </div>
+                                </div>
+                                <div class="card__price">
+                                    <div class="card__first-price">23 100 ₽</div>
+                                    <div class="card__sale-price">16 500 ₽</div>
+                                </div>
+                                <a href="" class="card__purchase">Приобрести</a>
+                            </div>
+                            <div class="courses__card card">
+                                <div class="card__img">
+                                    <img src = "@img/S0ROGis9Kcg.jpg" alt="">
+                                </div>
+                                <div class="card__text">
+                                    <div class="card__title">Fashion иллюстрация </div>
+                                    <div class="card__description">Научись переносить швейные идеи на бумагу! Курс подойдёт тем, кто никогда не рисовал до этого и тем, кто хочет знать больше о направлении fashion-скетчинга. </div>
+                                </div>
+                                <div class="card__price">
+                                    <div class="card__first-price">20 100 ₽</div>
+                                    <div class="card__sale-price">14 700 ₽</div>
+                                </div>
+                                <a href="" class="card__purchase">Приобрести</a>
+                            </div>
+                            <div class="courses__card card">
+                                <div class="card__img">
+                                    <img src = "@img/design.jpg" alt="">
+                                </div>
+                                <div class="card__text">
+                                    <div class="card__title">Дизайн одежды </div>
+                                    <div class="card__description">Научись переносить швейные идеи на бумагу! Курс подойдёт тем, кто никогда не рисовал до этого и тем, кто хочет знать больше о направлении fashion-скетчинга. </div>
+                                </div>
+                                <div class="card__price">
+                                    <div class="card__first-price">20 100 ₽</div>
+                                    <div class="card__sale-price">14 700 ₽</div>
+                                </div>
+                                <a href="" class="card__purchase">Приобрести</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page__videos videos">
+                <div class="videos__container">
+                        <h2 class="videos__title title">Наши видео материалы</h2>
+                        <div class="videos__block">
+                        <div class="videos__slider swiper">
+                            <div class="videos__wrapper swiper-wrapper">
+                                <div class="videos__slide swiper-slide">
+                                    <div class="videos__description">Тур по нашей школе</div>
+                                    <div class="videos__video video" data-src="1cDwx6iwh9E">
+                                        <div class="videos__preview">
+                                            <img src = "@img/sewing-cours.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="videos__slide swiper-slide">
+                                    <div class="videos__description">дефиле с финального показа 22.01.2022</div>
+                                    <div class="videos__video video" data-src="1cDwx6iwh9E">
+                                        <div class="videos__preview">
+                                            <img src = "@img/sewing-cours.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <button type="button" class="swiper-button-prev"></button>
+                        <button type="button" class="swiper-button-next"></button>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <div hidden class="dws">
+                <div class="pulse"><a href="tel: +79319686618">
+                        <div class="bloc"></div>
+                        <div class="phone">
+                            <img src="@img/call-calling.svg" alt="">
+                        </div>
+                        <div class="text">Кнопка звонка</div>
+                </div></a>
+            </div>
+
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
 </html>

@@ -1,21 +1,30 @@
-//====================================================================================================
+//===============================КАРТИНКА ГЛАВНОЙ=====================================================================
 .page {
-
+    background-color: rgb(23, 27, 27);
     &__cover {
         width: 100%;
         position: relative;
         height: 100vh;
-        img{
+        background-color: black;
+        @media (max-width: $mobileSmall) and (max-height:700px) {
+            height: 900px;
+        }
+        @media (max-height:700px) {
+            height: 900px;
+        }
+
+        img {
             position: absolute;
             height: 100%;
             width: 100%;
             object-fit: cover;
-
+            z-index: 0;
+            opacity: 0.7;
         }
     }
 }
 
-//====================================================================================================
+//==========================КНОПКА ТЕЛЕФОНА==========================================================================
 .dws {
     position: fixed;
     z-index: 10;
@@ -23,53 +32,66 @@
     left: 0;
     margin-left: 35px;
     margin-bottom: 30px;
-    z-index: 4;
+    z-index: 20;
+
     @media (max-width: $mobile) {
         margin-left: 15px;
-        
+
     }
+
     @media (max-width: 850px) {
         display: block;
     }
-   }
-   .pulse, .bloc, .phone {
+}
+
+.pulse,
+.bloc,
+.phone {
     position: absolute;
     width: 90px;
     height: 90px;
     color: #fff;
     text-align: center;
     border-radius: 50%;
+
     @media (max-width: $mobile) {
         width: 70px;
         height: 70px;
     }
-   }
-   .bloc {
+}
+
+.bloc {
     cursor: pointer;
-    z-index: 1;
+    
     overflow: hidden;
-   }
-   .pulse {
+}
+
+.pulse {
+    
     background: black;
     position: relative;
     transition: .5s;
-   }
-   .phone {
+}
+
+.phone {
     font-size: 50px;
     line-height: 20px;
     animation: phone .9s ease-in-out infinite;
-    img{
+
+    img {
         width: 40px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
     }
+
     @media (max-width: $mobile) {
         font-size: 40px;
     }
-   }
-   .text {
+}
+
+.text {
     position: absolute;
     opacity: 0;
     text-transform: uppercase;
@@ -78,25 +100,30 @@
     font-size: 15px;
     transform: scaleX(-1);
     transition: .5s ease-in-out;
+
     @media (max-width: $mobile) {
         font-size: 13px;
         top: 20px;
     }
-   }
-   .pulse:hover {
+}
+
+.pulse:hover {
     background: rgb(219, 114, 139);
-   }
-   .pulse:hover .phone img {
+}
+
+.pulse:hover .phone img {
     transition: .5s ease-in-out;
     transform: scale(0);
-   }
-   .pulse:hover .text {
+}
+
+.pulse:hover .text {
     transform: scaleX(1);
     transition: .5s ease-in-out;
     opacity: 1;
-   }
-   .pulse:hover::before,
-   .pulse:hover::after {
+}
+
+.pulse:hover::before,
+.pulse:hover::after {
     content: '';
     position: absolute;
     border: 1px solid white;
@@ -107,30 +134,470 @@
     border-radius: 50%;
     animation: pulse 1.8s linear infinite;
     opacity: 0;
-   }
-   .pulse:hover::after {
+}
+
+.pulse:hover::after {
     animation-delay: .5s;
-   }
-   
-   @keyframes phone {
-    0%, 100% {
-     transform: rotate(-20deg);
-    }
-    50% {
-     transform: rotate(21deg);
-    }
-   }
-   @keyframes pulse {
-    0% {
-     transform: scale(0.5);
-     opacity: 0;
-    }
-    50% {
-     opacity: 1;
-    }
+}
+
+@keyframes phone {
+
+    0%,
     100% {
-     transform: scale(1.2);
-     opacity: 0;
+        transform: rotate(-20deg);
     }
-   }
+
+    50% {
+        transform: rotate(21deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+//=====================================КУРСЫ ШИТЬЯ И ФОРМА===============================================================
+.page {
+
+    &__main-info {
+        
+        z-index: 10;
+        color: #fff;
+        height: 100%;
+    }
+
+    &__container {
+        height: 100%;
+
+    }
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    align-items: flex-start;
+    justify-content: center;
+    @media (max-width: $mobile) {
+        max-width: 600px;
+    }
+    @media (max-width: $mobileSmall) and(max-height: 700px) {
+    justify-content: flex-start;
+    padding-top: 150px;
+    }
+
+    &__title {
+        padding-bottom: 50px;
+        z-index: 10;
+        font-size: 50px;
+        background-color: rgba(0, 0, 0, 0.37);
+        box-shadow: 0px 0px 40px 35px  rgba(0, 0, 0, 0.37);
+
+        span {
+            display: block;
+            color: rgb(219, 114, 139);
+        }
+        @media (max-width: $tablet) {
+            font-size: 40px;
+            padding-bottom: 40px;
+        }
+        @media (max-width: $mobileSmall) {
+            font-size: 30px;
+            padding-bottom: 30px;
+        }
+    }
+
+    &__subtitle {
+       
+        z-index: 10;
+        font-size: 20px;
+        padding-bottom: 20px;
+        @media (max-width: $tablet) {
+            font-size: 18px;
+            padding-bottom: 15px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        z-index: 10;
+        flex-wrap: wrap;
+     
+    }
+}
+
+.main-info-form {
+    
+    &__lines {
+        display: flex;
+        order: 1;
+        @media (max-width: $mobileSmall) {
+        flex-wrap: wrap;
+        }
+    }
+
+    &__name-line {
+        margin-right: 20px;
+        @media (max-width: $mobileSmall) {
+            margin-right: 0;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+
+    &__name {
+        
+    }
+
+    &__telephone-line {
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+        }
+    }
+
+    &__telephone {}
+
+    &__real-checkbox {
+        order: 3;
+        @media (max-width: $mobile) {
+        align-self: center;
+        }
+    }
+
+    &__telephone-line input,
+    &__name-line input{
+        font-family: "intro-book";
+        background-color: rgba(0, 0, 0, 0.61);
+        border-bottom: 1px solid rgb(219, 114, 139);
+        width: 100%;
+        line-height: 20px;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    }
+}
+
+.checkbox {
+
+    &_block {
+        margin-top: 20px;
+        @media (max-width: $mobile) {
+        margin-left: 20px;
+        }
+        @media (max-width: $mobileSmall) {
+            margin-left: 0;
+        }
+    }
+}
+
+.real {
+    
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    
+    
+        &+label {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: #b6b6b6;
+        }
+    
+    
+        &+label::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border: 1px solid #909090;
+            margin-right: 0.5em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+            cursor: pointer;
+        }
+    
+        &:checked+label::before {
+            border-color: rgba(219, 114, 139, 0.623);
+            background-color: rgba(219, 114, 139, 0.623);
+            background-image: url('@img/Vector.svg');
+        }
+    
+}
+
+.accept {
+    cursor: pointer;
+    margin-left: 20px;
+    order: 2;
+     @media (max-width: $mobile) {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    @media (max-width: $mobileSmall) {
+    width: 100%;
+    }
+}
+
+.form-button {
+   
+    }
+
+.button {
+    width: 100%;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 30px;
+    
+  &:hover{
+    transition: all 0.3s ease 0s;
+    color: #fff;
+    background-color: rgba(219, 114, 139, 0.623);
+  }
+}
+
+//=====================================БЛОК ПРЕИМУЩЕСТВА===============================================================
+
+.page {
+
+    &__advantages {
+        
+    }
+}
+.advantages {
+    font-family: "intro-book";
+    padding-top: 50px;
+color: #fff;
+padding-bottom: 100px;
+    &__block {
+    }
+
+    &__title {
+        text-align: center;
+        border-bottom: 2px dashed rgb(21, 124, 14);
+        padding-bottom: 10px;
+    }
+
+    &__benefit {
+        font-size: 20px;
+        padding-top: 30px;
+        display: flex;
+        
+    }
+
+    &__list {
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 0 1 60%;
+        :not(:last-child){
+            padding-bottom: 20px;
+        }
+        @media (max-width: 1000px) {
+            flex: 0 1 100%;
+            padding-right: 0;
+            }
+    }
+
+    &__li {
+        position: relative;
+        padding-left: 30px;
+        &::before{
+            content: url('@img/scissor.svg');
+            position: absolute;
+            top: -2px;
+            left: 0;
+        }
+        @media (max-width: $mobile) {
+            font-size: 14px;
+        }
+    }
+
+    &__image {
+        flex: 0 1 40%;
+        position: relative;
+        @media (max-width: 1000px) {
+        display: none;
+        }
+        
+        img{
+            z-index: 10;
+            opacity: 0.7;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(-1, 1)
+        }
+    }
+}
+.title {
+    color: #fff;
+    font-size: 40px;
+    font-family: "intro-book";
+    @media (max-width: $tablet) {
+        font-size: 30px;
+    }
+}
+
+//=====================================БЛОК КАРТОЧКА КУРСА===============================================================
+
+.page {
+
+    &__courses {
+    }
+}
+.courses {
+padding-bottom: 100px;
+    &__container {
+    }
+
+    &__block {
+    }
+
+    &__title {
+        text-align: center;
+        border-bottom: 2px dashed rgb(219, 114, 139);
+        padding-bottom: 10px;
+        margin-bottom: 50px;
+    }
+
+    &__cards {
+        
+        
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__card {
+        
+    }
+}
+
+.card {
+    font-size: 20px;
+    line-height: 130%;
+    font-family: "intro-book";
+    color: #fff;
+display: flex;
+@media (max-width: $tablet) {
+    font-size: 14px;
+}
+
+        flex-direction: column;
+        
+    &__img {
+        
+        height: 280px;
+        position: relative;
+        background-color: black;
+        img{
+            opacity: 0.8;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        padding: 20px 20px;
+        background-color: rgba(219, 114, 139, 0.623);
+        flex: 1 1 auto;
+    }
+
+    &__title {
+        padding-bottom: 20px;
+        font-size: 30px;
+        @media (max-width: $tablet) {
+            font-size: 20px;
+        }
+    }
+
+    &__description {
+    }
+
+    &__price {
+        border-top: 1px solid rgba(107, 64, 74, 0.623) ;
+        padding: 20px 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 30px;
+        background-color: rgba(219, 114, 139, 0.623);
+        @media (max-width: $tablet) {
+            font-size: 20px;
+        }
+
+    }
+
+    &__first-price {
+        color: rgb(219, 114, 139);
+        position: relative;
+        &::after{
+            content: "";
+            height: 3px;
+            width: 100%;
+            
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) rotate(-9deg);
+            
+        }
+    }
+
+    &__sale-price {
+        color: white;
+    }
+
+    &__purchase {
+        margin-top: 20px;
+        color: rgb(219, 114, 139);
+        padding: 20px 20px;
+        width: 100%;
+        font-size: 20px;
+        padding: 20px 0;
+        text-align: center;
+        background-color: #fff;
+        font-family: "Intro-bold";
+        @media (max-width: $tablet) {
+            margin-top: 5px;
+        }
+        &:hover{
+            transition: all 0.3s ease 0s;
+            color: #fff;
+            background-color: rgba(219, 114, 139, 0.623);
+        }
+    }
+}
 
