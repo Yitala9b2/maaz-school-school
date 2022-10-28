@@ -1284,6 +1284,7 @@ textarea.input {
 
 .button {
   background-color: #fff;
+  color: black;
   width: 100%;
   cursor: pointer;
   font-size: 20px;
