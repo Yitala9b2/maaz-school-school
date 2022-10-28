@@ -183,6 +183,17 @@ h6 {
   padding: 0 0.9375rem;
 }
 
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=submit],
+input[type=button],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .tabs__navigation {
   display: -webkit-box;
   display: -ms-flexbox;
