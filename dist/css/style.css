@@ -192,6 +192,12 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border-radius: 0 !important;
+}
+
+textarea.input {
+  resize: none;
+  padding: 0px 0px;
 }
 
 .tabs__navigation {
@@ -1277,6 +1283,7 @@ textarea {
 }
 
 .button {
+  background-color: #fff;
   width: 100%;
   cursor: pointer;
   font-size: 20px;
