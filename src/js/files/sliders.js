@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Autoplay } from 'swiper';
+import Swiper, { Navigation, Autoplay, Lazy, EffectFade, Pagination } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -35,6 +35,7 @@ function initSliders() {
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
+            observeSlideChildren: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
 			autoHeight: true,
@@ -43,7 +44,7 @@ function initSliders() {
 			
 			//touchRatio: 0,
 			//simulateTouch: false,
-			//loop: true,
+			loop: false,
 			//preloadImages: false,
 			//lazy: true,
 
@@ -106,6 +107,89 @@ function initSliders() {
 			}
 		});
 	}
+	if (document.querySelector('.card__slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.card__slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation,Lazy,EffectFade,Autoplay, Pagination,Autoplay],
+			observer: true,
+			observeParents: true,
+            observeSlideChildren: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 800,
+            effect: 'fade',
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: false,
+			preloadImages: false,
+			lazy: {
+                loadPrevNext:true},
+
+			
+			// Эффекты
+			fadeEffect:{
+                crossFade:true
+            },
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: true,
+			},
+			
+
+			// Пагинация
+			
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			//navigation: {
+			//	prevEl: '.swiper-button-prev',
+			//	nextEl: '.swiper-button-next',
+			//},
+
+			// Брейкпоинты
+			/*
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+			// События
+            
+			on: {
+
+			}
+		});
+	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
@@ -139,6 +223,16 @@ function initSlidersScroll() {
 window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
 	initSliders();
-	// Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
-	//initSlidersScroll();
-});
+	let imageSlider = Array.from(document.querySelectorAll('.card__slider'));
+imageSlider.forEach(slider =>{
+    let pagination = slider.querySelector('.swiper-pagination')
+    let paginationBullet = Array.from(pagination.querySelectorAll('.swiper-pagination-bullet'))
+    console.log(paginationBullet)
+   for (let index = 0; index < paginationBullet.length; index++) {
+    paginationBullet[index].addEventListener("mouseenter",function (e) {
+        let swiperIndex = paginationBullet.indexOf(e.target)
+        slider.swiper.slideTo(swiperIndex)
+    })
+      
+   }
+})});

@@ -65,3 +65,26 @@ import { flsModules } from "./modules.js";
         }));
     }));
 }));
+
+//==========ДОБАВЛЕНИЕ В ПОПАП ИНФОРМАЦИИ ИЗ КАРТОЧЕК=============================
+
+const purchases = document.querySelectorAll(".card__purchase");
+const coursePeriod =document.querySelector("#course-period");
+const courseTitle =document.querySelector("#cours-title");
+const courseShedule =document.querySelector("#course-schedule");
+const coursePrice =document.querySelector("#price");
+
+for (const purchase of purchases) purchase.addEventListener("click", (function() {
+let popupTitleParent = purchase.parentNode.querySelector('.card__title').innerText
+formValues(courseTitle, popupTitleParent)
+let popupPeriodParent = purchase.parentNode.querySelector('.card__title').getAttribute('period')
+formValues(coursePeriod, popupPeriodParent)
+let popupSheduleParent = purchase.parentNode.querySelector('.card__title').getAttribute('schedule')
+formValues(courseShedule, popupSheduleParent)
+let popupPriceParent = purchase.parentNode.querySelector('.card__sale-price').innerText
+formValues(coursePrice, popupPriceParent)
+}))
+function formValues(popupItem, itemParent) {
+    popupItem.innerText = itemParent;
+    popupItem.value = itemParent;
+}

@@ -39,9 +39,7 @@
 
     }
 
-    @media (max-width: 850px) {
-        display: block;
-    }
+
 }
 
 .pulse,
@@ -50,7 +48,7 @@
     position: absolute;
     width: 90px;
     height: 90px;
-    color: #fff;
+    color: black;
     text-align: center;
     border-radius: 50%;
 
@@ -62,7 +60,7 @@
 
 .bloc {
     cursor: pointer;
-    
+    z-index:1;
     overflow: hidden;
 }
 
@@ -108,7 +106,7 @@
 }
 
 .pulse:hover {
-    background: rgb(219, 114, 139);
+    background: white;
 }
 
 .pulse:hover .phone img {
@@ -206,7 +204,7 @@
 
         span {
             display: block;
-            color: rgb(219, 114, 139);
+            color: white;
         }
         @media (max-width: $tablet) {
             font-size: 40px;
@@ -280,7 +278,7 @@
     &__name-line input{
         font-family: "intro-book";
         background-color: rgba(0, 0, 0, 0.61);
-        border-bottom: 1px solid rgb(219, 114, 139);
+        border-bottom: 1px solid white;
         width: 100%;
         line-height: 20px;
     padding: 10px;
@@ -337,8 +335,8 @@
         }
     
         &:checked+label::before {
-            border-color: rgba(219, 114, 139, 0.623);
-            background-color: rgba(219, 114, 139, 0.623);
+            border-color: white;
+            background-color: white;
             background-image: url('@img/Vector.svg');
         }
     
@@ -362,6 +360,8 @@
     }
 
 .button {
+    background-color: #fff;
+    color: black;
     width: 100%;
     cursor: pointer;
     font-size: 20px;
@@ -370,7 +370,7 @@
   &:hover{
     transition: all 0.3s ease 0s;
     color: #fff;
-    background-color: rgba(219, 114, 139, 0.623);
+    background-color: rgba(0, 0, 0, 0.61);
   }
 }
 
@@ -392,7 +392,7 @@ padding-bottom: 100px;
 
     &__title {
         text-align: center;
-        border-bottom: 2px dashed rgb(21, 124, 14);
+        border-bottom: 2px dashed rgba(252, 252, 252, 0.473);
         padding-bottom: 10px;
     }
 
@@ -420,7 +420,7 @@ padding-bottom: 100px;
 
     &__li {
         position: relative;
-        padding-left: 30px;
+        padding-left: 40px;
         &::before{
             content: url('@img/scissor.svg');
             position: absolute;
@@ -476,7 +476,7 @@ padding-bottom: 100px;
 
     &__title {
         text-align: center;
-        border-bottom: 2px dashed rgb(219, 114, 139);
+        border-bottom: 2px dashed rgba(252, 252, 252, 0.473);
         padding-bottom: 10px;
         margin-bottom: 50px;
     }
@@ -486,10 +486,10 @@ padding-bottom: 100px;
         
         display: grid;
         grid-auto-rows: auto;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         @media (max-width: $mobile) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(1, 1fr);
         }
         @media (max-width: $mobileSmall) {
             grid-template-columns: repeat(1, 1fr);
@@ -505,7 +505,7 @@ padding-bottom: 100px;
     font-size: 20px;
     line-height: 130%;
     font-family: "intro-book";
-    color: #fff;
+    color: black;
 display: flex;
 @media (max-width: $tablet) {
     font-size: 14px;
@@ -514,10 +514,10 @@ display: flex;
         flex-direction: column;
         
     &__img {
-        
-        height: 280px;
+        height: 380px;
         position: relative;
-        background-color: black;
+        
+        opacity: 0.5;
         img{
             opacity: 0.8;
             position: absolute;
@@ -531,7 +531,7 @@ display: flex;
 
     &__text {
         padding: 20px 20px;
-        background-color: rgba(219, 114, 139, 0.623);
+        background-color: rgb(255, 255, 255);
         flex: 1 1 auto;
     }
 
@@ -547,12 +547,12 @@ display: flex;
     }
 
     &__price {
-        border-top: 1px solid rgba(107, 64, 74, 0.623) ;
+        border-top: 1px solid rgba(87, 87, 87, 0.623) ;
         padding: 20px 20px;
         display: flex;
         justify-content: space-between;
         font-size: 30px;
-        background-color: rgba(219, 114, 139, 0.623);
+        background-color: white;
         @media (max-width: $tablet) {
             font-size: 20px;
         }
@@ -560,7 +560,7 @@ display: flex;
     }
 
     &__first-price {
-        color: rgb(219, 114, 139);
+        color: rgba(87, 87, 87, 0.623);
         position: relative;
         &::after{
             content: "";
@@ -568,7 +568,7 @@ display: flex;
             width: 100%;
             
             position: absolute;
-            background-color: rgb(255, 255, 255);
+            background-color: rgba(87, 87, 87, 0.623);
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%) rotate(-9deg);
@@ -577,12 +577,13 @@ display: flex;
     }
 
     &__sale-price {
-        color: white;
+        color: black;
     }
 
     &__purchase {
+        position: relative;
         margin-top: 20px;
-        color: rgb(219, 114, 139);
+        color: black;
         padding: 20px 20px;
         width: 100%;
         font-size: 20px;
@@ -593,11 +594,68 @@ display: flex;
         @media (max-width: $tablet) {
             margin-top: 5px;
         }
+        &:after {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;
+            z-index: 5;
+        }   &:hover:after {
+            border: 2px dashed rgba(252, 252, 252, 0.473);
+            height: 90%;
+            width: 97%;
+            @media (max-width: $mobile) {
+                border: none;
+            }
+        }
         &:hover{
             transition: all 0.3s ease 0s;
             color: #fff;
-            background-color: rgba(219, 114, 139, 0.623);
+            background-color: rgba(0, 0, 0, 0.61);;
         }
     }
 }
 
+.card {
+
+    &__slider {
+        height: 380px;
+        position:relative;
+    }
+
+    &__wrapper {
+        
+    }
+
+    &__slide {
+        
+        position: relative;
+        flex-shrink: 0;
+	width: 100%!important;
+	height: 100%;
+    background-color: black;
+        img{
+            
+            opacity: 0.7;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            object-fit: cover;
+        }
+    }
+    &__slide-img{
+        
+    }
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}

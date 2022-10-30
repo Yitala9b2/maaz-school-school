@@ -206,9 +206,9 @@ class Popup {
 					this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
 				}
 				if (this.options.hashSettings.location) {
-					// Получение хэша и его выставление 
-					this._getHash();
-					this._setHash();
+					// Получение хэша и его выставление (хэш не всегда нужен)
+					//this._getHash();
+					//this._setHash();
 				}
 
 				// До открытия

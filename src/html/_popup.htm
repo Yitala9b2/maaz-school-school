@@ -1,11 +1,48 @@
-<!-- 
-<div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-			</div>
-		</div>
-	</div>
+<div id="popup-course" aria-hidden="true" class="popup popup__course">
+    <div class="popup__wrapper">
+        <div class="popup__content course-content">
+            <button data-close type="button" class="popup__close"></button>
+            <div class="course-content__title">
+                Купить курс
+            </div>
+            <div id="cours-title" class="course-content__cours">
+
+            </div>
+            <div class="course-content__price-block">
+                <div id="price" class="course-content__price">20 100 ₽</div>
+            </div>
+            <div class="course-content__description">
+                <div class="course-content__duration duration">
+                    <div class="duration__top top">Продолжительность:</div>
+                    <div id="course-period" class="duration__bottom bottom">⁣⁣</div>
+                </div>
+                <div class="course-content__duration duration">
+                    <div class="duration__top top">Расписание:</div>
+                    <div id="course-schedule" class="duration__bottom bottom">⁣</div>
+                </div>
+            </div>
+            <form action="#" data-popup-message="#popup_accept" data-dev data-validate method="POST"
+                class="popup__course__form popup-course-form">
+                <div class="popup-course-form__lines">
+                    <div class="popup-course-form__name-line">
+                        <input class="popup-course-form__name" data-required="" data-error="Введите имя" type="text"
+                            placeholder="Ваше имя" name="name">
+                    </div>
+                    <div class="popup-course-form__telephone-line">
+                        <input class="popup-course-form__telephone" data-required="" data-error="Введите номер телефона"
+                            autocomplete="off" type="tel" placeholder="Ваш телефон" name="tel">
+                    </div>
+                </div>
+                <div class="popup-course-form__real-checkbox checkbox_block">
+                    <input type="checkbox" class="real" data-required="" data-error="Необходимо подтверждение"
+                        id="popup-real">
+                    <label for="popup-real">Я принимаю <a href="#">Договор оферты</a> и согласен на обработку моих
+                        персональных данных</label>
+                </div>
+                <div class="popup-course-form__accept">
+                    <input type="submit" value="КУПИТЬ" class="form-button button"><span></span></input>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
- -->
