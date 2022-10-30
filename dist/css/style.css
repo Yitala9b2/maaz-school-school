@@ -2547,6 +2547,15 @@ button.swiper-pagination-bullet {
     border: none;
   }
 
+  .swiper-pagination {
+    height: 5px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: white;
+    border-bottom: none;
+  }
+
   .videos__slider {
     min-height: 400px;
   }
