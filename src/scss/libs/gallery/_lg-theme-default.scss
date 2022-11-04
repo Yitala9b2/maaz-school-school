@@ -6,19 +6,39 @@
 // default theme
 .lg-next,
 .lg-prev {
-    background-color: $lg-next-prev-bg;
-    border-radius: $lg-border-radius-base;
+    
+    
     color: $lg-next-prev-color;
     cursor: pointer;
     display: block;
     font-size: 22px;
     margin-top: -10px;
-    padding: 8px 10px 9px;
+    
     position: absolute;
     top: 50%;
     z-index: $zindex-controls;
     outline: none;
     border: none;
+    
+
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    &:hover {
+        box-shadow: 0px 0px 20px 15px rgba(252, 252, 252, 0.349)
+    }
+    //position: absolute;
+    //top: 50%;
+    //transform: translate(0, -50%);
+    //margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    //z-index: 10;
+    //cursor: pointer;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+    //color: white;
+
 
     &.disabled {
         opacity: 0 !important;
@@ -37,7 +57,7 @@
     right: 20px;
 
     &:before {
-        content: '\e095';
+        content: url('@img/video-slider/Chevron_Right.svg');
     }
 }
 
@@ -45,7 +65,7 @@
     left: 20px;
 
     &:after {
-        content: '\e094';
+        content: url('@img/video-slider/Chevron_Left.svg');
     }
 }
 
@@ -108,7 +128,7 @@
         color: $lg-toolbar-icon-color;
         cursor: pointer;
         float: right;
-        font-size: 24px;
+        font-size: 40px;
         height: 47px;
         line-height: 27px;
         padding: 10px 0;
@@ -194,7 +214,7 @@
 .lg-counter {
     color: $lg-icon-color;
     display: inline-block;
-    font-size: $lg-counter-font-size;
+    font-size: 30px;
     padding-left: 20px;
     padding-top: 12px;
     height: 47px;

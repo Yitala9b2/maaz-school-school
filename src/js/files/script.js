@@ -44,14 +44,10 @@ import { flsModules } from "./modules.js";
 
   //================================ДОБАВЛЕНИЕ СКРИПТА НА ВИДЕО===============================
 
-  window.addEventListener("DOMContentLoaded", (function() {
-    let boxVideos = document.querySelectorAll(".preview_video");
+window.addEventListener("DOMContentLoaded", (function() {
+    let boxVideos = document.querySelectorAll(".videos__slide");
     if (boxVideos) boxVideos.forEach((boxVideo => {
-        if (boxVideo.dataset.src.length > 1) {
-            let neighbourVideo = boxVideo.parentNode.querySelector(".review_text");
-            neighbourVideo.remove();
-        }
-        if (boxVideo.dataset.src.length <= 1) boxVideo.remove();
+        if (boxVideo.querySelector('.video').dataset.src.length <= 1) boxVideo.remove();
     }));
     let videos = document.querySelectorAll(".video");
     if (videos) videos.forEach((video => {
@@ -60,10 +56,26 @@ import { flsModules } from "./modules.js";
                 let src = video.dataset.src;
                 video.classList.add("ready");
                 video.innerHTML = "";
-                video.insertAdjacentHTML("afterbegin", `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/` + src + `?autoplay=1;&playlist=` + src + `" title="YouTube video player" frameborder="0"\n\t\t\t\t\tallow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"\n\t\t\t\t\tallowfullscreen>\n\t\t\t\t</iframe>`);
+                video.insertAdjacentHTML("afterbegin", `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/`+src+`?autoplay=1;&playlist=`+src+`" title="YouTube video player" frameborder="0"\n\t\t\t\t\tallow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"\n\t\t\t\t\tallowfullscreen>\n\t\t\t\t</iframe>`);
             }
         }));
     }));
+    let gallery = document.querySelector('.gallery');
+    if (gallery) {
+        let galleryImage = gallery.querySelectorAll('.gallery__image');
+        galleryImage.forEach((image =>{
+            if (image.dataset.video) {
+                let objImageSrc = JSON.parse(image.dataset.video)
+                let imageSrc = objImageSrc.source[0].src
+                if (imageSrc.length <=1) {
+                    image.removeAttribute('data-video')
+                }
+                if (imageSrc.length > 1) {
+                    image.removeAttribute('href')
+                }
+            } 
+        }))
+    }
 }));
 
 //==========ДОБАВЛЕНИЕ В ПОПАП ИНФОРМАЦИИ ИЗ КАРТОЧЕК=============================
@@ -88,3 +100,30 @@ function formValues(popupItem, itemParent) {
     popupItem.innerText = itemParent;
     popupItem.value = itemParent;
 }
+
+//===========================ПАГИНАЦИЯ===============================================
+
+//function main() {
+//const posts = document.querySelectorAll('.gallery__image');
+//let currentPage = 1;
+//let rows = 12;
+
+//    function displayList(arrPosts, rowPerPage, page) {
+//        const gallery = document.querySelector('.gallery');
+
+//        const start = rowPerPage*currentPage;
+//        const end = start + rowPerPage;
+//        const paginatedArr = arrPosts.slice(start, end);
+//    }
+//    function displayPagination(params) {
+        
+//    }
+//    function displayPaginationBtn(params) {
+        
+//    }
+//    displayList(posts,rows,currentPage)
+//}
+//main()
+
+//=============ВИДЕО В ГАЛЕРЕИ=======================
+

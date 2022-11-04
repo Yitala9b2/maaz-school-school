@@ -36,7 +36,10 @@
 	.lg-prev,
 	.lg-next,
 	.lg-pager-outer {
-		opacity: 1;
+		opacity: 0.8;
+        @media (max-width: 479.98px) {
+            opacity: 0.6;
+        }
 	}
 	&.lg-hide-sub-html {
 		.lg-sub-html {
