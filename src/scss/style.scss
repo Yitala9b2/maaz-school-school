@@ -129,8 +129,10 @@ body {
 @import "common";
 
 // Подключение стилей отдельных блоков
+
 @import "header";
 @import "footer";
+@import "contact";
 
 // Подключение стилей отдельных страниц
 @import "home";

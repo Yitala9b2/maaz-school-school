@@ -125,5 +125,101 @@ function formValues(popupItem, itemParent) {
 //}
 //main()
 
-//=============ВИДЕО В ГАЛЕРЕИ=======================
 
+
+//=============УВЕЛИЧЕНИЕ КАРТОЧЕК С ПРЕПОДАВАТЕЛЯМИ=========
+
+let cards = document.querySelectorAll('.teachers__card');
+if (cards) {
+cards.forEach(card =>{
+    card.addEventListener("mouseenter",function (){
+        setTimeout(() => {
+            card.classList.add('big');
+            card.querySelector('.teachers-card__description').style.display = 'block';
+        cards.forEach(card=>{
+            if (!card.classList.contains('big')) {
+
+startQueries()
+        function startQueries(){
+            const MediaQueryNew = matchMedia('(min-width:991.98px)')
+            ifMatchesChange(MediaQueryNew)
+            MediaQueryNew.addListener(ifMatchesChange)
+            function ifMatchesChange(MediaQueryNew){
+                if (MediaQueryNew.matches) {
+                card.querySelector('.teachers-card__img').style.height = 230 + 'px';
+                card.querySelector('.teachers-card__name').style.fontSize = 20 + 'px';
+                card.querySelector('.teachers-card__prof').style.paddingTop = 10 + 'px';
+    } else{
+        card.querySelector('.teachers-card__img').style.height = 300 + 'px';
+    }}}
+
+                
+                
+            }
+        })
+        }, 100);
+        
+    })
+    card.addEventListener("mouseleave",function (){
+        setTimeout(() => {
+            card.classList.remove('big') 
+        cards.forEach(card=>{
+            card.querySelector('.teachers-card__img').style.removeProperty('height');
+            card.querySelector('.teachers-card__name').style.removeProperty('font-size'); 
+            card.querySelector('.teachers-card__prof').style.removeProperty('padding-top'); 
+            card.querySelector('.teachers-card__description').style.removeProperty('display'); 
+            
+
+        })
+        }, 100);
+        
+    })
+})
+}
+
+let map_container = document.getElementById('map_container');
+    let options_map = {
+        once: true,
+        passive: true,
+        capture: true
+    };
+    map_container.addEventListener('click', start_lazy_map, options_map);
+    //map_container.addEventListener('mouseover', start_lazy_map, options_map);
+    map_container.addEventListener('touchstart', start_lazy_map, options_map);
+    map_container.addEventListener('touchmove', start_lazy_map, options_map);
+    let mapImg = document.querySelector('.map_img');
+    let map_loaded = false;
+    function start_lazy_map() {
+        if (!map_loaded) {
+            let map_block = document.getElementById('ymap_lazy');
+            mapImg.remove()
+            map_loaded = true;
+            map_block.setAttribute('src', map_block.getAttribute('data-src'));
+            map_block.removeAttribute('data-src');
+            console.log('YMAP LOADED');
+        }
+    }
+
+    //======================ПРИЛЕПЛЯЕМ КНОПКУ ТЕЛЕФОНА К ФУТЕРУ ЧТОБЫ НЕ ЗАКРЫВАТЬ ЛОГОТИП==============
+    var socialFloat = document.querySelector('.dws');
+var footer = document.querySelector('.footer');
+if (socialFloat && footer) {
+    function checkOffset() {
+        function getRectTop(el) {
+            //находим координату верха элемента по y
+            var rect = el.getBoundingClientRect();
+            return rect.top;
+        }
+        // (если координата верха(от блока до верха браузера) + количество прокрученных пикселей) + высота элемента >= (координата футера + количество прокрученных пикселей)
+        if ((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop))
+            socialFloat.style.display = 'none';
+        if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
+            socialFloat.style.display = 'block'; // restore when you scroll up
+
+
+    }
+
+    document.addEventListener("scroll", function () {
+        checkOffset();
+    });
+}

@@ -207,9 +207,9 @@
             margin-top: 0;
         }
     }
-    .menu__list :nth-child(n){
+    .menu__list >:nth-child(n){
         margin-right: 0px;
-        margin-top: 10px;
+        margin-top: 15px;
     }
     .menu-open .menu__body{
         left: 0;

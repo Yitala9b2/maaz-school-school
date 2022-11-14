@@ -1,0 +1,153 @@
+//=======================БЛОК КОНТАКТОВ==============
+.page {
+
+    &__contacts {
+        padding-bottom: 100px;
+        @media (max-width: $mobile) {
+            padding-bottom: 70px;
+        }
+        @media (max-width: $mobileSmall) {
+            padding-bottom: 50px;
+        }
+    }
+}
+.contacts {
+
+    &__container {
+    }
+
+    &__title {
+
+    }
+
+    &__block {
+        display: flex;
+        width: 100%;
+        justify-content:space-between;
+        align-items: center;
+        @media (max-width: $tablet) {
+        flex-direction: column;
+        }
+    }
+
+    &__map {
+        background-color: black;
+        position: relative;
+        height: 400px;
+        width: 600px;
+        cursor: pointer;
+        @media (max-width: $tablet) {
+            width: 100%;
+        }
+        @media (max-width: 650px) {
+            width: 100%;
+            
+        }
+        img{
+            border-radius: 10px;
+            opacity: 0.8;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: white;
+            @media (max-width: $tablet) {
+                object-fit: contain;
+            }
+           
+        }
+    }
+
+    &__info {
+    }
+}
+.ymap_lazy{
+    
+}
+.map.container-fluid{
+    width: 100%;
+    height: 400px;
+}
+.contact {
+
+    &__map-block {
+    }
+}
+.info {
+padding-right: 50px;
+font-size: 20px;
+@media (max-width: $tablet) {
+    padding-right: 0;
+    padding-left: 30px;
+}
+    &__list {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        & >:not(:last-child){
+            padding-bottom: 40px;
+        }
+        @media (max-width: $tablet) {
+            padding-top: 30px;
+            flex-wrap: wrap;
+            padding-bottom: 40px;
+            flex-direction: row;
+            & >:not(:last-child){
+                margin-right: 60px;
+            }
+
+        }
+       
+    }
+
+    &__tel {
+        position: relative;
+        &::before{
+            position: absolute;
+            left: -35px;
+            content: url('@img/svg/Calling.svg');
+            @media (max-width: $tablet) {
+                left: -30px;
+            }
+        }
+    }
+
+    &__mail {
+        position: relative;
+        &::before{
+            position: absolute;
+            left: -35px;
+            content: url('@img/svg/Chat.svg');
+            @media (max-width: $tablet) {
+                left: -30px;
+            }
+        }
+    }
+
+    &__chart {
+        position: relative;
+        &::before{
+            position: absolute;
+            left: -35px;
+            content: url('@img/svg/Time Circle2.svg');
+            @media (max-width: $tablet) {
+                left: -30px;
+            }
+        }
+    }
+
+    &__adress {
+        position: relative;
+        &::before{
+            position: absolute;
+            left: -35px;
+            content: url('@img/svg/Location.svg');
+            @media (max-width: $tablet) {
+                left: -30px;
+            }
+        }
+    }
+}
+.map.container-fluid{
+    border-radius: 10px;
+}

@@ -386,7 +386,13 @@
     font-family: "intro-book";
     padding-top: 100px;
 color: #fff;
-padding-bottom: 150px;
+padding-bottom: 70px;
+@media (max-width: $mobile) {
+    padding-top: 70px;
+}
+@media (max-width: $mobileSmall) {
+    padding-top: 20px;
+}
     &__block {
     }
 
@@ -399,15 +405,18 @@ padding-bottom: 150px;
     &__benefit {
         font-size: 20px;
         display: flex;
-        
+        padding: 60px 0px 60px 0px;
     }
 
     &__list {
+        align-items: flex-start;
         padding-right: 30px;
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
         justify-content: space-between;
-        flex: 0 1 60%;
+        background-color: rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 0px 40px 35px rgb(0 0 0 / 25%);
+    
         :not(:last-child){
             padding-bottom: 20px; 
         }
@@ -418,10 +427,13 @@ padding-bottom: 150px;
     }
 
     &__li {
+        backdrop-filter: blur(5px);
+        display: inline-block;
         position: relative;
         padding-left: 40px;
+        font-size: 25px;
         &::before{
-            content: url('@img/scissor.svg');
+            content: url('@img/svg/medal-star.svg');
             position: absolute;
             top: -2px;
             left: 0;
@@ -432,27 +444,19 @@ padding-bottom: 150px;
     }
 
     &__image {
-        flex: 0 1 40%;
-        position: relative;
-        @media (max-width: 1000px) {
-        display: none;
-        }
-        
-        img{
-            z-index: 10;
-            opacity: 0.7;
-            position: absolute;
-            width: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('@img/nitki.jpg') no-repeat center center fixed;
+            background-size: cover;
             height: 100%;
-            object-fit: cover;
-            transform: scale(-1, 1)
-        }
+        
     }
 }
 .title {
     color: #fff;
     font-size: 40px;
     font-family: "intro-book";
+    border-bottom: 2px dashed rgba(252, 252, 252, 0.473);
+    padding-bottom: 10px;
+    margin-bottom: 50px;
     @media (max-width: $tablet) {
         font-size: 30px;
     }
@@ -467,11 +471,12 @@ padding-bottom: 150px;
 }
 .courses {
 padding-bottom: 150px;
-    &__container {
-    }
-
-    &__block {
-    }
+@media (max-width: $mobile) {
+    padding-bottom: 100px;
+}
+@media (max-width: $mobileSmall) {
+    padding-bottom: 70px;
+}
 
     &__title {
         text-align: center;
@@ -604,8 +609,8 @@ display: flex;
             z-index: 5;
         }   &:hover:after {
             border: 2px dashed rgba(252, 252, 252, 0.473);
-            height: 90%;
-            width: 97%;
+            width: 99%;
+            height: 93%;
             @media (max-width: $mobile) {
                 border: none;
             }
@@ -613,7 +618,8 @@ display: flex;
         &:hover{
             transition: all 0.3s ease 0s;
             color: #fff;
-            background-color: rgba(0, 0, 0, 0.61);;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.473);;
         }
     }
 }
@@ -670,10 +676,6 @@ display: flex;
     }
 }
 .works {
-
-    &__container {
-    }
-
     &__title {
         border-bottom: 2px dashed rgba(252, 252, 252, 0.473);
     padding-bottom: 10px;
@@ -687,12 +689,10 @@ display: flex;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 400px;
     gap: 30px;
-
     @media (max-width: $tablet) {
         gap: 10px;
         grid-template-columns: repeat(3, 1fr);
     }
-
     @media (max-width: $mobile) {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
@@ -722,20 +722,10 @@ display: flex;
             z-index: 10;
             transform: translate(-50%,-50%);
             content: url('@img/our-works/plus.svg');
-          
-          
-            
-
         }
-         
+
         img {
             position: absolute;
-            &:hover {
-                
-                
-            }
-            
-            
             top: 0;
             left: 0;
             width: 100%;
@@ -752,13 +742,19 @@ display: flex;
 .navigation.pagination {
     margin-top: 40px;
     text-align: center;
-    margin-bottom: 150px;
+    margin-bottom: 130px;
+    @media (max-width: $mobile) {
+        margin-bottom: 100px;
+    }
+    @media (max-width: $mobileSmall) {
+        margin-bottom: 70px;
+    }
 }
- 
+
 .nav-links {
 }
-.page-numbers-current,.page-numbers:hover {
-    opacity: 0.8;
+.page-numbers.current,.page-numbers:hover {
+    opacity: 0.6;
 }
 .page-numbers {
     cursor: pointer;
@@ -768,4 +764,277 @@ display: flex;
     background-color: white;
 }
 .next {
+}
+
+
+//====================================БЛОК УЧИТЕЛЕЙ==================================
+
+.page {
+
+    &__teachers {
+        padding-bottom: 100px;
+        @media (max-width: $mobile) {
+            padding-bottom: 70px;
+        }
+        @media (max-width: $mobileSmall) {
+            padding-bottom: 50px;
+        }
+    }
+}
+.teachers {
+
+    &__title {
+
+    }
+
+    &__block {
+        min-height: 600px;
+        display: flex;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        & >:not(:last-child){
+            padding-right: 30px;
+            @media (max-width: 1200px) {
+                padding-right: 15px;
+            }
+            @media (max-width: $tablet) {
+                padding-right: 30px;
+            }
+    
+        }
+        
+        
+        @media (max-width: $tablet) {
+        
+        & >:nth-child(n){
+            padding-top: 30px;
+            padding-right: 0;
+        }
+        flex-wrap: wrap;
+        min-height: 1000px;
+        & >:last-child{
+            padding-bottom: 30px;
+        }
+        }
+
+
+    }
+
+    &__image{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('@img/vishal-banik-V6T99SnUCyA-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    }
+    
+}
+
+
+.teachers-card {
+    text-align: center;
+    @media (max-width: $tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    & >:nth-child(2){
+        padding-left: 20px;
+    }
+    
+    }
+    @media (max-width: 650px) {
+    flex-direction: column;
+    }
+    &__img {
+        text-align: center;
+        border-radius: 50%;
+        height: 270px;
+        
+        background-color: #909090;
+        position: relative;
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        @media (max-width: $tablet) {
+            width: 300px;
+            height: 300px;
+            }
+    
+    }
+    &.big .teachers-card__img{
+        transition: all 0.3s ease 0s;
+    height: 380px;
+    width: 380px;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    @media (max-width: 1100px) {
+        height: 340px;
+        width: 340px;
+    }
+    @media (max-width: $tablet) {
+        height: 300px;
+        width: 300px;
+    }
+    }
+    &__main-description {
+        padding-top: 20px;
+        
+    }
+
+    &__description {
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        line-height: 130%;
+        font-family: "intro-book";
+        width: 100%;
+        font-size: 20px;
+        padding: 30px;
+        @media (max-width: $tablet) {
+            font-size: 16px;
+        
+        }
+    }
+    &__name{
+        font-size: 25px;
+        line-height: 110%;
+    }
+    &__prof{
+        padding-top: 20px;
+        font-size: 16px;
+        font-family: "intro-book";
+        line-height: 130%;
+    }
+}
+
+
+.page {
+    background-color: rgb(23, 27, 27);
+    &__cover {
+
+    }
+}
+
+
+.shop {
+padding-bottom: 100px;
+@media (max-width: $mobile) {
+    padding-bottom: 70px;
+}
+@media (max-width: $mobileSmall) {
+    padding-bottom: 50px;
+}
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        &>:not(:last-child){
+            margin-bottom: 20px;
+        }
+    }
+
+    &__magazine, &__proizvodstvo {
+        box-shadow: 0 0 5px 5px rgb(17, 17, 17);
+        background-color: black;
+        position: relative;
+        width: 100%;
+        min-height: 300px;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: $mobile) {
+            min-height: 200px;
+        }
+        &:hover img{
+            opacity: 0.4;
+                width: 110%;
+                height: 110%;
+                transition: all 0.3s ease 0s;
+        }
+        img{
+            z-index: 0;
+            opacity: 0.6;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+
+    &__description {
+        position: relative;
+        z-index: 3;
+        color: black;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:end;
+    }
+
+    &__text {
+        letter-spacing: 2px;
+        display: inline-block;
+        color: white;
+        font-size: 30px;
+        margin-bottom: 30px;
+        @media (max-width: $mobile) {
+            font-size: 20px;
+        }
+    }
+
+    &__button {
+        letter-spacing: 2px;
+        font-size: 20px;
+        position: relative;
+        background-color: white;
+        @media (max-width: $mobile) {
+            font-size: 15px;
+        }
+        &:hover{
+            background: rgba(0, 0, 0, 0.541);
+            color: white;
+            border-radius: 10px;
+            transition: all 0.3s ease 0s;
+        }
+        &:hover :after{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 97%;
+                    height: 93%;
+                    border:  2px dashed rgba(252, 252, 252, 0.664);
+                    border-radius: 10px;
+                }
+            
+        a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            padding: 20px 40px;
+            @media (max-width: $mobile) {
+            padding: 15px;
+            }
+        }
+    }
+
+    &__proizvodstvo {
+    }
+}
+.title {
 }

@@ -296,3 +296,79 @@ body::after {
 
     &_block {}
 }
+
+//=====================ПОПАП УСПЕШНОЙ ОТПРАВКИ===================
+#popup_accept .popup__content{
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+    color: white;
+}
+#popup_accept .popup__close {
+    &::before,
+    &::after {
+        @media (max-width: $mobile) {
+            background-color: white;
+            z-index: 5;
+        }
+    }
+}
+
+#popup_accept .text {
+    border-radius: 10px;
+    &_accept {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+        position: relative;
+        &:after{
+            content:"";
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 2px dashed rgba(252, 252, 252, 0.473);
+            position: absolute;
+            top: 0;
+        }
+
+        h1 {
+            font-family: 'intro-bold';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 30px;
+            line-height: 120%;
+            letter-spacing: 0.08em;
+        }
+
+        h2 {
+            font-family: 'intro-book';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: 0.01em;
+        }
+
+        &>:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .accept_image {
+            width: 100px;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .footer__social {
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+    }
+
+}

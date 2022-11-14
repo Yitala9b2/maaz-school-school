@@ -227,7 +227,6 @@ window.addEventListener("load", function (e) {
 imageSlider.forEach(slider =>{
     let pagination = slider.querySelector('.swiper-pagination')
     let paginationBullet = Array.from(pagination.querySelectorAll('.swiper-pagination-bullet'))
-    console.log(paginationBullet)
    for (let index = 0; index < paginationBullet.length; index++) {
     paginationBullet[index].addEventListener("mouseenter",function (e) {
         let swiperIndex = paginationBullet.indexOf(e.target)
