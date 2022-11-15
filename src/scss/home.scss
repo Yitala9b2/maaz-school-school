@@ -409,13 +409,13 @@ padding-bottom: 70px;
     }
 
     &__list {
+        backdrop-filter: blur(5px);
         align-items: flex-start;
         padding-right: 30px;
         display: inline-flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: rgba(0, 0, 0, 0.20);
-    box-shadow: 0px 0px 40px 35px rgb(0 0 0 / 25%);
+       
     
         :not(:last-child){
             padding-bottom: 20px; 
@@ -427,7 +427,7 @@ padding-bottom: 70px;
     }
 
     &__li {
-        backdrop-filter: blur(5px);
+        
         display: inline-block;
         position: relative;
         padding-left: 40px;
@@ -444,10 +444,13 @@ padding-bottom: 70px;
     }
 
     &__image {
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('@img/nitki.jpg') no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('@img/nitki.jpg') no-repeat center center;
             background-size: cover;
+            background-attachment:fixed;
             height: 100%;
-        
+            @media (max-width: 767.98px) {
+                  background-attachment: initial;
+                }
     }
 }
 .title {
@@ -822,9 +825,13 @@ display: flex;
     }
 
     &__image{
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('@img/vishal-banik-V6T99SnUCyA-unsplash.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('@img/vishal-banik-V6T99SnUCyA-unsplash.jpg') no-repeat center center ;
     background-size: cover;
+    background-attachment:fixed;
     height: 100%;
+    @media (max-width: 767.98px) {
+          background-attachment: initial;
+        }
     }
     
 }
