@@ -223,3 +223,17 @@ if (socialFloat && footer) {
         checkOffset();
     });
 }
+
+//============ПРЕЛОАДЕР================
+window.onload = function() {
+
+    setTimeout(function() {
+        let preloader = document.getElementById("preloader_malc")
+        if (preloader) {
+            document.getElementById("preloader_malc").style.display = "none";
+        }
+        
+
+    }, 400);
+
+};
