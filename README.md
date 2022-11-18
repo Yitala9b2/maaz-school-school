@@ -3,7 +3,7 @@
 Сайт для школы дизайна одежды
 
 
-<p> github pages:  https://yitala9b2.github.io/Ketfinance/  </p>
+<p> github pages:  yitala9b2.github.io/maaz-school-school/  </p>
 
 <div  id="ladesign_description" align="center" >
   
