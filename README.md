@@ -4,7 +4,7 @@
 
 
 <p> github pages:  https://yitala9b2.github.io/maaz-school-school/  </p>
-
+<p> Сайт на хостинге:  https://maaz-school.test-handyhost.ru/school/  </p>
 <div  id="ladesign_description" align="center" >
   
   <p> В данной работе использовались: slider-swiper с интересным решением смены слайдов, попапы, бургер, прокрутка к нужному блоку, анимации: animate.css, 
